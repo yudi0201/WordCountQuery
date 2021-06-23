@@ -32,7 +32,7 @@ namespace WordCountTrill
         {
             public IDisposable Subscribe(IObserver<WordData> observer)
             {
-                using (var reader = new StreamReader(@"/root/WordCountTrill/750_thousand_word_UNIX.csv"))
+                using (var reader = new StreamReader(@"/root/WordCountTrill/500_thousand_word_UNIX.csv"))
                 //using (var reader = new StreamReader(@"C:\Users\yudis\Documents\university\Summer2021\Code\pysparkPrograms\data\word_stream\750_thousand_word_UNIX.csv"))
                 
                 {
