@@ -32,14 +32,15 @@ namespace WordCountTrill
         {
             public IDisposable Subscribe(IObserver<WordData> observer)
             {
-                using (var reader = new StreamReader(@"/root/WordCountTrill/750_thousand_word_UNIX.csv"))
-                //using (var reader = new StreamReader(@"C:\Users\yudis\Documents\university\Summer2021\Code\pysparkPrograms\data\word_stream\1_million_word_UNIX.csv"))
+                //using (var reader = new StreamReader(@"/root/WordCountTrill/750_thousand_word_UNIX.csv"))
+                using (var reader = new StreamReader(@"C:\Users\yudis\Documents\university\Summer2021\Code\pysparkPrograms\data\word_stream\750_thousand_word_UNIX.csv"))
                 
                 {
                   reader.ReadLine();
                   while (!reader.EndOfStream)
                   {
                       var line = reader.ReadLine();
+                      Console.WriteLine(line);
                       var values = line.Split(',');
                       var data = new WordData(long.Parse(values[0]), values[1]);
                       observer.OnNext(data);
