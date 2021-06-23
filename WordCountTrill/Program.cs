@@ -40,7 +40,7 @@ namespace WordCountTrill
                   while (!reader.EndOfStream)
                   {
                       var line = reader.ReadLine();
-                      Console.WriteLine(line);
+                      //Console.WriteLine(line);
                       var values = line.Split(',');
                       var data = new WordData(long.Parse(values[0]), values[1]);
                       observer.OnNext(data);
