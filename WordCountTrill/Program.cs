@@ -53,14 +53,12 @@ namespace WordCountTrill
         }
         static void Main(string[] args)
         {
-
-            var wordRecordObservable = new MyObservable();
-            var wordRecordStreamable =
-                wordRecordObservable.ToTemporalStreamable(e => e.Time, e => e.Time + 1)
-                    .Cache();
-
             var sw = new Stopwatch();
             sw.Start();
+            
+            var wordRecordObservable = new MyObservable();
+            var wordRecordStreamable =
+                wordRecordObservable.ToTemporalStreamable(e => e.Time, e => e.Time + 1);
             
             //int WindowSize = 10;
             var result = wordRecordStreamable.GroupApply(e => e.Word,
